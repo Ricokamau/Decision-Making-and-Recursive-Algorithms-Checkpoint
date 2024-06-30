@@ -1,0 +1,22 @@
+function fibonacci(n) {
+   
+    if (n === 0) {
+        return 0;
+    }
+    if (n === 1) {
+        return 1;
+    }
+  
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const n = prompt("Enter the position of the Fibonacci number you want:");
+if (n !== null) { 
+    const parsedN = parseInt(n, 10);
+    if (!isNaN(parsedN) && parsedN >= 0) { 
+        const result = fibonacci(parsedN);
+        alert(`The Fibonacci number at position ${parsedN} is ${result}.`);
+    } else {
+        alert("Please enter a valid non-negative integer.");
+    }
+}
