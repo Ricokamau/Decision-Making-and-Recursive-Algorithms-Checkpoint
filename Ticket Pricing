@@ -1,0 +1,26 @@
+function getTicketPrice(age) {
+    if (age <= 12) {
+        return 10;
+    } else if (age >= 13 && age <= 17) {
+        return 15;
+    } else if (age >= 18) {
+        return 20;
+    } else {
+        return -1; 
+    }
+}
+
+const age = prompt("Enter your age:");
+if (age !== null) { 
+    const parsedAge = parseInt(age, 10);
+    if (!isNaN(parsedAge)) {
+        const price = getTicketPrice(parsedAge);
+        if (price !== -1) {
+            alert("The price of the movie ticket is $" + price + ".");
+        } else {
+            alert("Invalid age entered.");
+        }
+    } else {
+        alert("Please enter a valid number for your age.");
+    }
+}
